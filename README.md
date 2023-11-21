@@ -60,4 +60,9 @@ Dependencies are two kinds- 1. Dev Dependencies that are used in development 2. 
 - Always named with Capital Letters
 - render as <FunctionalComponent />
 - Rendering one component inside another component is component composition
-- 
+
+## Config Driven UI
+
+- const {resData} = resData?.data -- **optional Chaining**
+- unique key is necessary to prevent re-rendering all of the elements of the loop and not just something newly updated or added.
+- Using index is not recommended since order of elements could be changed

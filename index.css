@@ -1,6 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    background-color: grey;
 }
 
 .sideNav {
@@ -47,8 +48,8 @@
 .res-card {
     padding: 5px;
     width: 200px;
-    height: 300px;
     margin: 5px;
+    height: max-content;
 }
 
 .res-card:hover {
@@ -58,6 +59,7 @@
 
 .res-image {
     width: 100%;
+    height:35%;
 }
 
 .footer {
