@@ -66,3 +66,32 @@ Dependencies are two kinds- 1. Dev Dependencies that are used in development 2. 
 - const {resData} = resData?.data -- **optional Chaining**
 - unique key is necessary to prevent re-rendering all of the elements of the loop and not just something newly updated or added.
 - Using index is not recommended since order of elements could be changed
+
+/*
+App Component
+- Header
+- Body 
+- Footer
+Header Component
+- Hamburger Button
+- Logo
+- Current Location
+- Search Bar
+- Cart
+Body Component
+- Resteraunt Container
+  - Resteraunt Cards
+     - Image
+     - Resteraunt Name
+     - Rating
+     - Delivery Charges
+     - Delivery time
+Footer Component
+- Logo
+- Links
+- Download from Appstore, Playstore
+- Facebook, Twitter, Instagram
+- Terms Links
+
+
+*/
