@@ -95,3 +95,9 @@ Footer Component
 
 
 */
+
+## Exports
+- named exports export const Component; 
+  import {Component} from "path";
+- default exports - export default Component;
+  import Component from "path"
