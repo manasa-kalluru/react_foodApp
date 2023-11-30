@@ -4,8 +4,10 @@ import HeaderComponent from "./components/HeaderComponent";
 import Body from "./components/Body";
 import Divider from "./components/Divider";
 import Footer from "./components/Footer";
-
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
 
 const AppComponent = () => {
   return (
@@ -19,7 +21,23 @@ const AppComponent = () => {
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppComponent />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
+
 // create root using createRoot
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // passing react element inside root
-root.render(<AppComponent />);
+root.render(<RouterProvider router={appRouter} />);
