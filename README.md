@@ -101,3 +101,21 @@ Footer Component
   import {Component} from "path";
 - default exports - export default Component;
   import Component from "path"
+
+## Hooks
+- whenever a state variable is updated react re-renders the component
+- React hook is a regular JS utility function imported through npm
+- useState() - state variables - named import - const [arg,function] = useState(initialValurForArg)
+- useEffect() - useFfect(() => {}, []) - the first argument i.e call back function is called after the component is rendered
+
+## DOM
+- Reconciliation Algo- React fiber - Came up in React16 to update DOM
+- virtual DOM is a representation of actual DOM - is a nested object
+- Diff Algorithm - finds diff btwn old virtual DOM and new virtual DOM and updates DOM for every render cycle
+- React is fast because it does efficient DOM manipulation
+
+## Microservices
+- Monoliths have APIs,UIs,Authentication,DAtabase and other aspects all in one project and any change done in any part needs a complete deployment of all
+- Microservices have different services for diff jobs which combined together forms a big application. 
+- This is separation of concerns or single responsibility principle where each service has its own job.
+- 
