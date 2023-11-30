@@ -79,10 +79,10 @@ Header Component
 - Search Bar
 - Cart
 Body Component
-- Restaraunt Container
-  - Restaraunt Cards
+- Restauraunt Container
+  - Restauraunt Cards
      - Image
-     - Restaraunt Name
+     - Restauraunt Name
      - Rating
      - Delivery Charges
      - Delivery time

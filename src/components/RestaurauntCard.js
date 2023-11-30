@@ -1,5 +1,5 @@
 import { RES_IMG } from "../utils/constants";
-const RestarauntCard = (props) => {
+const RestaurauntCard = (props) => {
     const {resData} = props;
     const {name, avgRatingString, totalFee, costForTwo, cloudinaryImageId} = resData?.info;
     return (
@@ -13,4 +13,4 @@ const RestarauntCard = (props) => {
     );
   }
 
-  export default RestarauntCard;
+  export default RestaurauntCard;
