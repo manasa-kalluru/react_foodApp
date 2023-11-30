@@ -103,7 +103,7 @@ Footer Component
   import Component from "path"
 
 ## Hooks
-- whenever a state variable is updated react re-renders the component
+- whenever a state variable is updated react **re-renders the entire component** (react triggers reconciliation cycle)
 - React hook is a regular JS utility function imported through npm
 - useState() - state variables - named import - const [arg,function] = useState(initialValurForArg)
 - useEffect() - useFfect(() => {}, []) - the first argument i.e call back function is called after the component is rendered
@@ -118,4 +118,10 @@ Footer Component
 - Monoliths have APIs,UIs,Authentication,DAtabase and other aspects all in one project and any change done in any part needs a complete deployment of all
 - Microservices have different services for diff jobs which combined together forms a big application. 
 - This is separation of concerns or single responsibility principle where each service has its own job.
-- 
+
+## Rendering
+- page loads -> API is called => Renders
+- Page Loads => Renders => API called => Re-renders -> React follows this since having layout is better and react is fast at rendering
+
+## Shimmer UI
+- A shimmer UI is a version of the UI that doesn't contain actual content, but instead mimics the layout and shapes of the content that will eventually appear

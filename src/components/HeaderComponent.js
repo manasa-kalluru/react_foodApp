@@ -1,6 +1,8 @@
 import { SIDENAV_IMG } from "../utils/constants";
 import { LOGO_URL } from "../utils/constants";
+import { useState } from "react";
 const HeaderComponent = () => {
+  let [btnName, setBtnName] = useState("Login");
   return (
     <div className="header">
       <div className="logo-items">
@@ -10,8 +12,19 @@ const HeaderComponent = () => {
       <div className="nav-items">
         <ul>
           <li>Location</li>
-          <li>SearchBar</li>
           <li>Cart</li>
+          <li>
+            <button
+              className="login-btn"
+              onClick={() => {
+                btnName === "Login"
+                  ? setBtnName("Logout")
+                  : setBtnName("Login");
+              }}
+            >
+              {btnName}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

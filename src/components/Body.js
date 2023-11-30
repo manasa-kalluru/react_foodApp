@@ -8,6 +8,9 @@ import Shimmer from "./Shimmer";
 // {console.log(resList[1].info.avgRating)}
 const Body = () => {
   const [listOfResteraunts, setListOfResteraunts] = useState([]);
+  const [searchedResteraunts, setSearchedResteraunts] = useState([]);
+
+  let [searchText, setSearchText] = useState("");
   
   useEffect(() => {
     fetchData();
@@ -21,6 +24,7 @@ const Body = () => {
     console.log(json);
     //optional chaining
     setListOfResteraunts(json?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setSearchedResteraunts(json?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   if(listOfResteraunts.length === 0) {
@@ -30,11 +34,18 @@ const Body = () => {
   return (
     <div className="Body">
       <div className="filter">
+      <input type= "text" className="search-box" value={searchText} onChange={(event) => {
+              setSearchText(event.target.value);
+            }}/>
+            <button className="search-btn" onClick={() => {
+              const searchedList = listOfResteraunts.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+              setSearchedResteraunts(searchedList);
+            }}>Search</button>
         <button
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfResteraunts.filter(
-              (res) =>  res.info.avgRating > 3.7
+              (res) =>  res.info.avgRating > 4
             );
             setListOfResteraunts(filteredList);
           }}
@@ -44,7 +55,7 @@ const Body = () => {
       </div>
       <div className="resteraunt-container">
           
-        {listOfResteraunts.map((res) => {
+        {searchedResteraunts.map((res) => {
           return <ResterauntCard key={res.info.id} resData={res} />;
         })}
       </div>
