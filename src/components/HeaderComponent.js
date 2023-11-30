@@ -1,6 +1,8 @@
 import { SIDENAV_IMG } from "../utils/constants";
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const HeaderComponent = () => {
   let [btnName, setBtnName] = useState("Login");
   return (
@@ -11,8 +13,16 @@ const HeaderComponent = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Location</li>
-          <li>Cart</li>
+        <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            {/* <a href="/about">About US</a> */}
+            <Link to="/about">About Us </Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <li>
             <button
               className="login-btn"

@@ -79,10 +79,10 @@ Header Component
 - Search Bar
 - Cart
 Body Component
-- Resteraunt Container
-  - Resteraunt Cards
+- Restaraunt Container
+  - Restaraunt Cards
      - Image
-     - Resteraunt Name
+     - Restaraunt Name
      - Rating
      - Delivery Charges
      - Delivery time
@@ -106,7 +106,16 @@ Footer Component
 - whenever a state variable is updated react **re-renders the entire component** (react triggers reconciliation cycle)
 - React hook is a regular JS utility function imported through npm
 - useState() - state variables - named import - const [arg,function] = useState(initialValurForArg)
-- useEffect() - useFfect(() => {}, []) - the first argument i.e call back function is called after the component is rendered
+- useEffect() - useFfect(() => {}, []) - the first argument i.e call back function is called after the component is rendered, the second argument is a dependency array that determines when the callback function is called
+- If there is no dependency array-> useFfect(() => {}) -> useEffect is called on every render.
+- If dependency arrais empty -> useFfect(() => {}, []) -> useEffect is called on intial render(just once)
+- If dependency array is a variable say {btnName}, useEffect is called everytime btnName is updated
+
+## DOs and Donts Hooks
+- Hooks are used to create local state variables inside a component. So hooks can only be called inside a component.
+- Never create useState inside an if loop, it leads to incosistencies in react code.
+- Never create hooks inside a for loop or a function bcz same reason as above.
+- 
 
 ## DOM
 - Reconciliation Algo- React fiber - Came up in React16 to update DOM
@@ -125,3 +134,34 @@ Footer Component
 
 ## Shimmer UI
 - A shimmer UI is a version of the UI that doesn't contain actual content, but instead mimics the layout and shapes of the content that will eventually appear
+
+## ROUTING
+- is imported using npm install **react-router-dom**
+- is initiated in the main app.js using **createBrowserRouter** which takes a list of paths.
+- react-router-dom also provides a component called **RouterProvider** to render all the contents of createBrowserROuter.It provides routing configuration.
+- `root.render(<RouterProvider router={appRouter} />);`
+
+## useRouteError hook
+- reat-router-dom provides us a useRouteError hooks that gives us more info about the error that occures. We can just initialize the hook to a variable and log the error.
+- `const err = useRouteError();
+  console.log(err);`
+
+## Outlet component from react-router-dom
+- The outlet comonent renders the relevant element from createBrowserRouter's children whenevr there is a change in the path.
+- The outlet component however will not be in the html when rendered bit instead is replaced by the child route element
+- whenevr there is a change in the path, only the outlet is re-render but the header and footer will just remain same
+
+## rafce - generates component in vs code
+
+## <a> usage to route to diff page
+- Using <a> tag to navigate to a new pge will lead to reloading of the entire page.
+
+## Link component from react-router-dom
+- This works similar to <a>. But it only 
+- **This is why react applications are **Single Page Web Applications**. since all the pages are rendered through children of one single components created through createBrowserRouter.**
+
+## 2 types of Routing in Web Apps
+- Client Side Routing - Like react when tha app is loaded the first time all the componets are loaded and the component is just renderes and no network calls are made.
+- Server Side Routing - a network call is made to fetch the html and the html response is rendered. 
+
+
