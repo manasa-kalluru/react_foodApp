@@ -164,4 +164,7 @@ Footer Component
 - Client Side Routing - Like react when tha app is loaded the first time all the componets are loaded and the component is just renderes and no network calls are made.
 - Server Side Routing - a network call is made to fetch the html and the html response is rendered. 
 
+## Dynamic routing
+- `path: "/restauraunt/:resId",` - :resId is dynamic
+
 
