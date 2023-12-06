@@ -171,4 +171,9 @@ Footer Component
 
 - useParams is a hook provided by react-router-dom to extract params from the request url
 
-
+## Class Components
+- Class based components are just javascript classes extends React.component from react so that react can track them as components.
+- Class components contains a render function that returns a JSX element.
+- Uses constructor() to access props. Call super(props) to properly extend Component and set up this.props
+-  you do not need to write a constructor to access props in class-based components in React 16.3 and aabove since syntax in javascript itself is simplified.
+- state variables are created in constuctor

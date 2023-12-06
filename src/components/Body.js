@@ -129,7 +129,7 @@ const Body = () => {
       </div>
       <div className="restaurant-container">
         {searchedRestaurants.map((res) => {
-          return <Link key={res.info.id} to= {"/restaurants/" + res.info.id} ><RestaurantCard resData={res} /></Link>;
+          return <Link className="resCardLink" key={res.info.id} to= {"/restaurants/" + res.info.id} ><RestaurantCard resData={res} /></Link>;
         })}
       </div>
     </div>

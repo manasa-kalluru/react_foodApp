@@ -139,3 +139,17 @@
     color: #3e4152;
     word-break: break-word;
 }
+
+.resCardLink {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+.user-card {
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: -1px 5px 10px 5px rgba(112,112,112,.2);
+}
