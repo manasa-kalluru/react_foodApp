@@ -79,10 +79,10 @@ Header Component
 - Search Bar
 - Cart
 Body Component
-- Restauraunt Container
-  - Restauraunt Cards
+- Restaurant Container
+  - Restaurant Cards
      - Image
-     - Restauraunt Name
+     - Restaurant Name
      - Rating
      - Delivery Charges
      - Delivery time
@@ -165,6 +165,10 @@ Footer Component
 - Server Side Routing - a network call is made to fetch the html and the html response is rendered. 
 
 ## Dynamic routing
-- `path: "/restauraunt/:resId",` - :resId is dynamic
+- `path: "/restaurant/:resId",` - :resId is dynamic
+
+## useParams
+
+- useParams is a hook provided by react-router-dom to extract params from the request url
 
 

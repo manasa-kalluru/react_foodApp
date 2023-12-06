@@ -50,7 +50,7 @@
     margin: 2px 0px 20px 0px; 
 }
 
-.restauraunt-container {
+.restaurant-container {
    display: flex;
    flex-wrap: wrap;
 }
@@ -126,4 +126,16 @@
 .search-btn {
     margin: 10px 0px;
     cursor: pointer;
+}
+
+.menu-items > ul {
+    list-style-type: circle;
+}
+
+.itemName {
+    margin-right: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
 }
