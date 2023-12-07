@@ -207,4 +207,28 @@ Footer Component
     - Second Child Component Did Mount
     - Parent Component Did Mount
 
+## 
+
+- Mounting
+   - Constructor (Dummy Data-initialized data)
+   - Render (Dummy Data)
+        - <HTML  (Dummy Data)>
+   - Component Did Mount 
+        - API called
+        - <this.setState> -> State Variable is updated 
+- Updating 
+        - Render (API data)
+        - <HTML (new API Data)>
+        - Component Did Update
+
+- Instance:
+        - Parent Constructor
+        - Parent Render
+        -  Name Child Constructor
+        - Name Child Render
+        - Name Child Component Did Mount
+        -  Parent Component Did Mount
+        -  Manasa Kalluru Child Render
+        - Component Did Update
+
 
