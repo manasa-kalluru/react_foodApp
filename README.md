@@ -102,7 +102,7 @@ Footer Component
 - default exports - export default Component;
   import Component from "path"
 
-## Hooks
+## Hooks - useEffect
 - whenever a state variable is updated react **re-renders the entire component** (react triggers reconciliation cycle)
 - React hook is a regular JS utility function imported through npm
 - useState() - state variables - named import - const [arg,function] = useState(initialValurForArg)
@@ -110,6 +110,7 @@ Footer Component
 - If there is no dependency array-> useFfect(() => {}) -> useEffect is called on every render.
 - If dependency arrais empty -> useFfect(() => {}, []) -> useEffect is called on intial render(just once)
 - If dependency array is a variable say {btnName}, useEffect is called everytime btnName is updated
+- The return statement of the call back function of useEffect can be used to clean up re-occuring code like setInterval.
 
 ## DOs and Donts Hooks
 - Hooks are used to create local state variables inside a component. So hooks can only be called inside a component.
@@ -126,7 +127,8 @@ Footer Component
 ## Microservices
 - Monoliths have APIs,UIs,Authentication,DAtabase and other aspects all in one project and any change done in any part needs a complete deployment of all
 - Microservices have different services for diff jobs which combined together forms a big application. 
-- This is separation of concerns or single responsibility principle where each service has its own job.
+- This is separation of concerns or **single responsibility** principle where each service has its own job.
+- benefits- Reusable, Testable, Maintainable code.
 
 ## Rendering
 - page loads -> API is called => Renders
@@ -231,4 +233,5 @@ Footer Component
         -  Manasa Kalluru Child Render
         - Component Did Update
 
-
+## App chunking, Code Splitting, Dynamic Bundling, Lazy Loading, On Demand Loading, Dynamic Import
+-  lazy() is a named export from react which takes a call back function as parameter which returns a react component from the import.
