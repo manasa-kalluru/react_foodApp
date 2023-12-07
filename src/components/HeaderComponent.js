@@ -2,9 +2,11 @@ import { SIDENAV_IMG } from "../utils/constants";
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const HeaderComponent = () => {
   let [btnName, setBtnName] = useState("Login");
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="header">
       <div className="logo-items">
@@ -14,15 +16,17 @@ const HeaderComponent = () => {
       <div className="nav-items">
         <ul>
         <li>
-            <Link to="/">Home</Link>
+            <Link className="link" to="/">Home</Link>
           </li>
           <li>
             {/* <a href="/about">About US</a> */}
-            <Link to="/about">About Us </Link>
+            <Link className="link" to="/about">About Us </Link>
           </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
+            <Link className="link" to="/contact">Contact Us</Link>
           </li>
+          <li>Online Status: {onlineStatus? "✅" : "🔴"}</li>
+
           <li>
             <button
               className="login-btn"
@@ -32,7 +36,7 @@ const HeaderComponent = () => {
                   : setBtnName("Login");
               }}
             >
-              {btnName}
+              {btnName} 
             </button>
           </li>
         </ul>

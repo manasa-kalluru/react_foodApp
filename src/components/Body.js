@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import Divider from "./Divider";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // {console.log(typeof(resList))}
 // let listOfRes = [];
@@ -89,6 +90,14 @@ const Body = () => {
     }
   };
 
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you're offline!! Please check your internet Connection.
+      </h1>
+    );
+
   if (listOfRestaurants.length === 0) {
     return <Shimmer />;
   }
@@ -129,7 +138,15 @@ const Body = () => {
       </div>
       <div className="restaurant-container">
         {searchedRestaurants.map((res) => {
-          return <Link className="resCardLink" key={res.info.id} to= {"/restaurants/" + res.info.id} ><RestaurantCard resData={res} /></Link>;
+          return (
+            <Link
+              className="resCardLink"
+              key={res.info.id}
+              to={"/restaurants/" + res.info.id}
+            >
+              <RestaurantCard resData={res} />
+            </Link>
+          );
         })}
       </div>
     </div>

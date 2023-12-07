@@ -153,3 +153,8 @@
     cursor: pointer;
     box-shadow: -1px 5px 10px 5px rgba(112,112,112,.2);
 }
+
+.link {
+    text-decoration: none;
+    color: #000000;
+  }
