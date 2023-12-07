@@ -177,3 +177,34 @@ Footer Component
 - Uses constructor() to access props. Call super(props) to properly extend Component and set up this.props
 -  you do not need to write a constructor to access props in class-based components in React 16.3 and aabove since syntax in javascript itself is simplified.
 - state variables are created in constuctor
+- Never directly update state variables. i.e this.state.count =5
+- whenever a class component is mounted on the application, the constructor is called first before everything else.
+- Life Cycle in class based components: 
+    - Parent Constructor
+    - Parent Render
+    - Child Constructor
+    - Child Render
+    -  Child Component Did Mount
+    - Parent Component Did Mount
+
+## ComponentDidMount
+
+- called after the component is loaded
+- API calls are made inside componentDidMount - Allowing react to render the component first instead of waiting to fetch data from API
+
+## react lifecycle methods
+- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+- After mounting, thr render phase of child components is bundled into one batch so that the expensive commiting phase of DOM manipulation can be done at a time for all the child components thus making react faster.
+- that is why the life cycle looks like below:
+    - Parent Constructor
+    - Parent Render
+    - First Child Constructor
+    - First Child Render
+    - Second Child Constructor
+    - Second Child Render
+    DOM MANIPULATION BEGINS
+    - First Child Component Did Mount
+    - Second Child Component Did Mount
+    - Parent Component Did Mount
+
+
