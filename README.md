@@ -235,3 +235,7 @@ Footer Component
 
 ## App chunking, Code Splitting, Dynamic Bundling, Lazy Loading, On Demand Loading, Dynamic Import
 -  lazy() is a named export from react which takes a call back function as parameter which returns a react component from the import.
+
+## Tailwind CSS
+- learn about scss, caas, stylesheets,material UI, chakra UI, Bootsrap
+- Post CSS is a tool for transforming CSS with JS. Tailwind CSS uses Post CSS.

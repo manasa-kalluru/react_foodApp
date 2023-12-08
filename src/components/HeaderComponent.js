@@ -9,29 +9,37 @@ const HeaderComponent = () => {
   let [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between shadow-lg">
       <div className="logo-items">
-        <img className="sideNav" src={SIDENAV_IMG} />
-        <img className="logo" src={LOGO_URL} />
+        {/* <img className="sideNav" src={SIDENAV_IMG} /> */}
+        <img className="w-20 ml-4" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
-        <li>
-            <Link className="link" to="/">Home</Link>
+      <div className="flex align-middle">
+        <ul className="flex p-4 m-4">
+          <li className="px-4 hover:text-lime-600">
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
-          <li>
+          <li className="px-4 hover:text-lime-600">
             {/* <a href="/about">About US</a> */}
-            <Link className="link" to="/about">About Us </Link>
+            <Link className="link" to="/about">
+              About Us{" "}
+            </Link>
           </li>
-          <li>
-            <Link className="link" to="/contact">Contact Us</Link>
+          <li className="px-4 hover:text-lime-600">
+            <Link className="link" to="/contact">
+              Contact Us
+            </Link>
           </li>
-          <li>
-            <Link className="link" to="/grocery">Grocery</Link>
+          <li className="px-4 hover:text-lime-600">
+            <Link className="link" to="/grocery">
+              Grocery
+            </Link>
           </li>
-          <li>Online Status: {onlineStatus? "✅" : "🔴"}</li>
+          <li className=" px-4 hover:text-lime-600">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
 
-          <li>
+          <li className="px-4 hover:text-lime-600">
             <button
               className="login-btn"
               onClick={() => {
@@ -40,7 +48,7 @@ const HeaderComponent = () => {
                   : setBtnName("Login");
               }}
             >
-              {btnName} 
+              {btnName}
             </button>
           </li>
         </ul>
