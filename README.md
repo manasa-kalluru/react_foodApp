@@ -238,4 +238,4 @@ Footer Component
 
 ## Tailwind CSS
 - learn about scss, caas, stylesheets,material UI, chakra UI, Bootsrap
-- Post CSS is a tool for transforming CSS with JS. Tailwind CSS uses Post CSS.
+- Post CSS is a tool for transforming CSS with JS. Tailwind CSS uses Post CSS. The code will become messy if classes are long.
