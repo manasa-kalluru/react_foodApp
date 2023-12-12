@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withOfferLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -15,6 +15,8 @@ const Body = () => {
 
   let [searchText, setSearchText] = useState("");
 
+  const RestaurantCardWithOffer = withOfferLabel(RestaurantCard);
+
   useEffect(() => {
     console.log("FETCH DATA");
     fetchData();
@@ -24,6 +26,8 @@ const Body = () => {
   //   console.log("POST DATA");
   //   postData();
   // }, []);
+
+  console.log(listOfRestaurants);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -103,12 +107,12 @@ const Body = () => {
   }
 
   return (
-    <div className="Body" >
-      <div className="filter flex m-4">
+    <div className="Body w-full" >
+      <div className="filter flex m-4 w-full justify-center">
         <div>
         <input
           type="text"
-          className="border border-solid border-black py-1 ml-5"
+          className="border border-solid border-lime-600 w-96 rounded-lg py-1 ml-5"
           value={searchText}
           onChange={(event) => {
             setSearchText(event.target.value);
@@ -138,14 +142,18 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="flex flex-wrap align-super">
+      <div className="flex flex-wrap w-full pl-14">
         {searchedRestaurants.map((res) => {
+           
           return (
             <Link
               className="resCardLink"
               key={res.info.id}
               to={"/restaurants/" + res.info.id}
             >
+              
+              {/* { header !== undefined ? <RestaurantCardWithOffer /> : <RestaurantCard />} */}
+
               <RestaurantCard resData={res} />
             </Link>
           );

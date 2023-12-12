@@ -239,3 +239,7 @@ Footer Component
 ## Tailwind CSS
 - learn about scss, caas, stylesheets,material UI, chakra UI, Bootsrap
 - Post CSS is a tool for transforming CSS with JS. Tailwind CSS uses Post CSS. The code will become messy if classes are long.
+
+## Higher Order Component
+- HOC is a function that takes a component and returns a component.
+- A component that takes an existing component and enchances it and returns a new component.
