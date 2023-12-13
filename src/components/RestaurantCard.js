@@ -19,8 +19,7 @@ const RestaurantCard = (props) => {
 // input - resCard output - Res card with offer
 
 export const withOfferLabel = (RestaurantCard) => {
-  return (props) => {
-    console.log(props);
+  return () => {
     <div>
       <label>{props}</label>
       <RestaurantCard />
