@@ -154,7 +154,9 @@ const Body = () => {
               
               {/* { header !== undefined ? <RestaurantCardWithOffer /> : <RestaurantCard />} */}
 
-              <RestaurantCard resData={res} />
+              {(res.info.id) % 2 ? <RestaurantCardWithOffer /> : <RestaurantCard resData={res} />}
+
+              {/* <RestaurantCard resData={res} /> */}
             </Link>
           );
         })}

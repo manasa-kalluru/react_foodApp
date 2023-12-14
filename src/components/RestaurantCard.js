@@ -21,7 +21,7 @@ const RestaurantCard = (props) => {
 export const withOfferLabel = (RestaurantCard) => {
   return () => {
     <div>
-      <label>{props}</label>
+      <label>Offer</label>
       <RestaurantCard />
     </div>
   }
