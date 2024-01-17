@@ -14,8 +14,10 @@ Dependencies are two kinds- 1. Dev Dependencies that are used in development 2. 
  **package.json vs package-lock.json** package.json is only a configuration of npm and the dependencies. package-lock.json contains all the details about the exact version of dependencies and sub-dependencies installed. And it is so big because there can be transitive dependencies i.e dependencies that our dependency depends on.
  **What to commit to git?**: Since node_modules is too heavy, we put it in gitignore file. Instead we commit package.json and package-lock.json which can be used to regenerate node_modules.We just have to do npm install to get node_modules.
  **npx**: npx commands executes the package. npx parcel index.html leads to parcel going to source index.html and builds our application
- **Injecting React**: Using cdn react links in script tags to introduce react in a project is not ideal since fetching from unpkg is costly. React can be imported as a part of node modules and all the concerned dependencies can also be installed.
- **Import React**:The script tag importing js file that is rendering react has to be specified of type "module" since browser scripts cannot have imports or exports.
+ ## Injecting React
+ - Using cdn react links in script tags to introduce react in a project is not ideal since fetching from unpkg is costly. React can be imported as a part of node modules and all the concerned dependencies can also be installed.
+ ## Import React
+ - The script tag importing js file that is rendering react has to be specified of type "module" since browser scripts cannot have imports or exports.
 
 ## Parcel
 - Does dev build
@@ -243,3 +245,98 @@ Footer Component
 ## Higher Order Component
 - HOC is a function that takes a component and returns a component.
 - A component that takes an existing component and enchances it and returns a new component.
+
+## syntax for variables
+- ["@type"]
+
+## Lifting the sate up
+- call the set state function in the child component by passing it through props.
+
+## props Drilling
+- passing props from parent to multi layered child components 
+
+## react-context
+- Used to have data at a central place where it can be accesed from any component inorder to avoid props drilling.
+- is an object
+- const variable = createContext({
+    key: value
+});
+- accessed through react hook useContext
+- const data = useContext(contextVariable);
+- If incase of a functional component, since react hooks does not exist in functional components, we use .consumer to access variables created through react-context.
+- <UserContext.Consumer>
+            {({contextVariable}) => <h1>{contextVariable}</h1> }
+  </UserContext.Consumer>
+- Context is a global that can be given access to in the whole platform or just a specific part of the platform
+- <UserContext.Provider value={{key: value}}>
+- can be nested.  
+
+## REDUX Toolkit
+- one of state management libraries. others are Zustand.
+- Redux-Toolkit - latest and standard way of writing redux
+- React-redux - library to bridge gap between vanila redux and redux-toolkit.
+- The Redux Toolkit package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:
+
+"Configuring a Redux store is too complicated"
+"I have to add a lot of packages to get Redux to do anything useful"
+"Redux requires too much boilerplate code"
+
+## Build a store
+- Install @reduxjs/toolkit and react-redux
+- Build a store
+- Connect the store to the app
+- Slice (cart slice)
+- Dispatch(action)
+- Selector
+
+## create a store
+- `import { configureStore } from "@reduxjs/toolkit";
+  const appStore = configureStore({
+    reducer : {
+        cart: cartReducer,
+    },
+  });`
+
+## Provide store to application
+- `import { Provider } from "react-redux";`
+- is imported in the main app.js of the application 
+- the main rendering component is wrapped with <Provider> to link the store to the application. this Provider component takes the store as props.
+- `<Provider store={appStore}>
+   <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+    <div className="app-component">
+      <HeaderComponent />
+      <Outlet />
+      <Footer />
+    </div>
+    </UserContext.Provider>
+    </Provider>`
+
+## Build a slice
+- `import { createSlice } from "@reduxjs/toolkit";
+const cartSlice = createSlice({
+    name:'cart' ,
+    initialState: {
+        items: []
+    },
+    reducers: {
+        addItem: (state, action) => {
+            state.items.push(action.payload);
+        },
+    },
+});
+
+export const {addItem} = cartSlice.actions;
+export default cartSlice.reducer;`
+
+- the createSlice will return items and actions mapped to reducer functions.
+
+## Subscribe to the store
+ - subscribing to the store is done through useSelector hook.
+  const cartItems = useSelector((store) => store.cart.items); 
+ 
+ ## Dispatch
+ - const dispatch = useDispatch();
+
+
+
+
